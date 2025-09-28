@@ -1,4 +1,5 @@
 from framework.test_case import TestCase
+from framework.test_result import TestResult
 
 
 class MyTest(TestCase):
@@ -19,14 +20,18 @@ class MyTest(TestCase):
 
 
 def run_test():
+    result = TestResult()
+
     test = MyTest("test_a")
-    test.run()
+    test.run(result)
 
     test = MyTest("test_b")
-    test.run()
+    test.run(result)
 
     test = MyTest("test_c")
-    test.run()
+    test.run(result)
+
+    print(result.summary())
 
 
 if __name__ == "__main__":
