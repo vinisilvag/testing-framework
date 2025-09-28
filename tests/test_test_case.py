@@ -1,28 +1,8 @@
 from framework.test_case import TestCase
 from framework.test_result import TestResult
 
+from .test_spy import TestSpy
 from .test_stub import TestStub
-
-
-class TestSpy(TestCase):
-    def __init__(self, name):
-        TestCase.__init__(self, name)
-        self.was_run = False
-        self.was_set_up = False
-        self.was_tear_down = False
-        self.log = ""
-
-    def set_up(self):
-        self.was_set_up = True
-        self.log += "set_up "
-
-    def test_method(self):
-        self.was_run = True
-        self.log += "test_method "
-
-    def tear_down(self):
-        self.was_tear_down = True
-        self.log += "tear_down"
 
 
 class TestCaseTest(TestCase):
