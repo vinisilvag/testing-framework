@@ -1,16 +1,7 @@
 from framework.test_case import TestCase
 from framework.test_result import TestResult
 
-
-class TestStub(TestCase):
-    def test_success(self):
-        assert True
-
-    def test_failure(self):
-        assert False
-
-    def test_error(self):
-        raise Exception
+from .test_stub import TestStub
 
 
 class TestSpy(TestCase):
